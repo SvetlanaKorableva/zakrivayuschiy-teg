@@ -1,46 +1,98 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff"> <!-- Указание светлой темы по умолчанию -->
     <title>Закрывающий тег</title>
-    <link rel="stylesheet" href="./fonts/fonts.css" />
-    <link rel="stylesheet" href="./styles/variables.css" />
-    <link rel="stylesheet" href="./styles/globals.css" />
-    <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/animations.css" />
-    <link rel="stylesheet" href="./styles/themes.css" />
-  </head>
-  <body class="page">
-    <header class="header">
-      <nav class="theme-menu header__theme-menu">
-        <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
-        <ul class="theme-menu__list">
-          <li class="theme-menu__item">
-            <button type="button" data-theme="dark" class="theme-menu__button">
-              Темно
-            </button>
-          </li>
-          <li class="theme-menu__item">
-            <button
-              type="button"
-              data-theme="auto"
-              disabled
-              class="theme-menu__button"
-            >
-              Авто
-            </button>
-          </li>
-          <li class="theme-menu__item">
-            <button type="button" data-theme="light" class="theme-menu__button">
-              Светло
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main></main>
-    <script src="./scripts/set-theme.js"></script>
-    <script src="./scripts/like.js"></script>
-  </body>
-</html>
+
+    <!-- Подключение иконок -->
+    <link rel="icon" type="image/png" href="images/favicon (1).svg">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/globals.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/themes.css">
+    <link rel="stylesheet" href="styles/animations.css">
+
+    <!-- Подключение скриптов -->
+    <script src="scripts/set-theme.js" defer></script>
+    <script src="scripts/like.js" defer></script>
+</head>
+<body class="page theme-light">
+    <!-- Общий контейнер -->
+    <div class="container">
+        <!-- Шапка -->
+        <header class="header">
+            <div class="header__content">
+                <h1 class="header__title">&lt;/HTML&gt;</h1>
+                <p class="header__subtitle">ЗАКРЫВАЮЩИЙ ТЕГ</p>
+            </div>
+
+            <!-- Переключатель тем -->
+            <nav class="theme-menu header__theme-menu">
+                <ul class="theme-menu__list">
+                    <li class="theme-menu__item">
+                        <button type="button" data-theme="dark" class="theme-menu__button">
+                            ТЕМНО
+                        </button>
+                    </li>
+                    <li class="theme-menu__item">
+                        <button type="button" data-theme="auto" class="theme-menu__button">
+                            АВТО
+                        </button>
+                    </li>
+                    <li class="theme-menu__item">
+                        <button type="button" data-theme="light" class="theme-menu__button">
+                            СВЕТЛО
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Основное содержание -->
+        <main class="content">
+            <section class="card">
+                <h2 class="card__title">Фритек и нулевой спринт: Подготовка к работе</h2>
+                <img src="images/image.png" alt="Пиксельный автомобиль" class="card__image">
+                <p class="card__description">
+                    Это было самое начало пути. На этом этапе важно было проникнуться основами и настроиться на учёбу. И, возможно, подумать, как новые знания могут повлиять на ваше будущее.
+                </p>
+                <p class="card__text">Место для ваших воспоминаний о начале обучения.</p>
+                
+                <!-- Блок Like -->
+                <div class="card__like-section">
+                    <!-- Кнопка с иконкой сердца -->
+                    <button class="card__icon-button">
+                        <svg class="like-icon" viewBox="0 0 32 29.6" aria-hidden="true">
+                            <path d="M23.7 4.5c-.9-1-2.4-1.6-4-1.6-3.5 0-6.3 2.9-6.3 6.3s2.9 6.3 6.3 6.3c1.6 0 2.9-.6 3.9-1.6l4.6 4.4c.4.4 1 .4 1.4 0l4.6-4.4c1-.9 2.3-1.6 3.9-1.6 3.5 0 6.3-2.9 6.3-6.3s-2.9-6.3-6.3-6.3c-1.6 0-2.9.6-3.9 1.6l-4.6 4.4c-.4.4-1 .4-1.4 0l-4.6-4.4c-.4-.4-1-.4-1.4 0z"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Кнопка с текстом Like/Unlike -->
+                    <button class="card__like-button">
+                        <span class="button__text">Like</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <button class="footer__save-button">
+            <!-- Иконка дискеты через SVG symbol -->
+            <svg class="diskette-icon" viewBox="0 0 32 32" fill="currentColor">
+                <use xlink:href="#diskette-symbol"></use>
+            </svg>
+            <span class="button__text">Сохранить на память</span>
+        </button>
+    </footer>
+
+    <!-- Внешний SVG с символами -->
+    <object type="image/svg+xml" data="svg/symbols.svg" aria-hidden="true"></object>
+</body>

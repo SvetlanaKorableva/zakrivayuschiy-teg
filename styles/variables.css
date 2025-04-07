@@ -1,1 +1,45 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+/* Переменные для шрифтов */
+/* Переменные для паттернов фона */
+:root {
+    --background-pattern-light: url('../svg/pattern-light.svg');
+    --background-pattern-dark: url('../svg/pattern-dark.svg');
+    --accent-color: #000000; /* Цвет текста для светлой темы */
+}
+
+/* Темная тема */
+:root.theme-dark {
+    --background-pattern: var(--background-pattern-dark);
+    --accent-color: #00ff00; /* Цвет текста для темной темы */
+}
+
+/* Светлая тема */
+:root.theme-light {
+    --background-pattern: var(--background-pattern-light);
+}
+
+/* Переменные для шрифтов */
+:root {
+    --main-font: 'Inter', sans-serif; /* Основной шрифт */
+    --accent-font: 'PressStart2P', monospace; /* Акцентный шрифт */
+}
+
+:root {
+    --main-font: 'Inter', sans-serif;
+    --accent-font: 'PressStart2P', monospace;
+
+    --text-font-weight: 400;
+    --heading-font-weight: 700;
+
+    --background-color: #ffffff;
+    --accent-color: #000000;
+
+    --background-pattern: url('images/pattern-light.svg');
+}
+
+:root.theme-dark {
+    --background-color: #000000;
+    --accent-color: #00ff00;
+
+    --background-pattern: url('images/pattern-dark.svg');
+}

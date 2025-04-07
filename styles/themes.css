@@ -4,3 +4,63 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+/* Светлая тема */
+:root.theme-light {
+    --background-color: #ffffff;
+    --accent-color: #000000;
+    --pattern-image: url('../images/light-pattern.png');
+    --text-font-weight: 400;
+    --heading-font-weight: 700;
+}
+
+/* Темная тема */
+:root.theme-dark {
+    --background-color: #000000;
+    --accent-color: #00ff00;
+    --pattern-image: url('../images/dark-pattern.png');
+    --text-font-weight: 500;
+    --heading-font-weight: 800;
+}
+
+/* Настройка шрифта через font-variation-settings */
+.page {
+    font-family: var(--main-font);
+    font-variation-settings: 'wght' var(--text-font-weight);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--main-font);
+    font-variation-settings: 'wght' var(--heading-font-weight);
+}
+
+/* Общий фон страницы */
+.page {
+    background-color: var(--background-color);
+    background-image: var(--pattern-image);
+    background-size: 4px 4px; /* Размер паттерна */
+    background-attachment: fixed; /* Фиксированный фон */
+    background-repeat: repeat; /* Повторение по осям */
+}
+
+/* Темная тема */
+:root.theme-dark {
+    --background-color: #000000;
+    --accent-color: #00ff00;
+    --background-pattern: url('images/pattern-dark.svg');
+}
+
+/* Мобильная версия */
+@media (max-width: 375px) {
+    .card {
+        padding: 15px;
+    }
+
+    .card__title {
+        font-size: 20px;
+    }
+
+    .card__description,
+    .card__text {
+        font-size: 14px;
+    }
+}

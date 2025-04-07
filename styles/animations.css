@@ -12,3 +12,24 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+/* Анимация для Like */
+.like-icon {
+    transition: fill 0.3s ease;
+}
+
+.like-icon.is-liked {
+    animation: heartbeat 0.8s infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
