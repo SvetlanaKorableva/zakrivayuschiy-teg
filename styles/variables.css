@@ -1,45 +1,31 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 /* Переменные для шрифтов */
 /* Переменные для паттернов фона */
-:root {
-    --background-pattern-light: url('../svg/pattern-light.svg');
-    --background-pattern-dark: url('../svg/pattern-dark.svg');
-    --accent-color: #000000; /* Цвет текста для светлой темы */
-}
+/* В этом файле будут храниться все значения переменных в исходном состоянии */
 
-/* Темная тема */
-:root.theme-dark {
-    --background-pattern: var(--background-pattern-dark);
-    --accent-color: #00ff00; /* Цвет текста для темной темы */
-}
-
-/* Светлая тема */
-:root.theme-light {
-    --background-pattern: var(--background-pattern-light);
-}
+/* В этом файле будут храниться все значения переменных в исходном состоянии */
 
 /* Переменные для шрифтов */
 :root {
     --main-font: 'Inter', sans-serif; /* Основной шрифт */
     --accent-font: 'PressStart2P', monospace; /* Акцентный шрифт */
+    --text-font-weight: 400; /* Толщина основного текста */
+    --heading-font-weight: 700; /* Толщина заголовков */
+    --background-color: #ffffff; /* Фон по умолчанию (светлая тема) */
+    --accent-color: #000000; /* Цвет текста по умолчанию (светлая тема) */
+    --pattern-image: url('../svg/pattern-light.svg'); /* Паттерн фона по умолчанию (светлая тема) */
 }
 
-:root {
-    --main-font: 'Inter', sans-serif;
-    --accent-font: 'PressStart2P', monospace;
-
-    --text-font-weight: 400;
-    --heading-font-weight: 700;
-
-    --background-color: #ffffff;
-    --accent-color: #000000;
-
-    --background-pattern: url('images/pattern-light.svg');
-}
-
+/* Темная тема */
 :root.theme-dark {
-    --background-color: #000000;
-    --accent-color: #00ff00;
+    --background-color: #000000; /* Темный фон */
+    --accent-color: #00ff00; /* Зеленый цвет текста */
+    --pattern-image: url('../svg/pattern-dark.svg'); /* Паттерн фона для тёмной темы */
+}
 
-    --background-pattern: url('images/pattern-dark.svg');
+/* Светлая тема */
+:root.theme-light {
+    --background-color: #ffffff; /* Светлый фон */
+    --accent-color: #000000; /* Чёрный цвет текста */
+    --pattern-image: url('../svg/pattern-light.svg'); /* Паттерн фона для светлой темы */
 }

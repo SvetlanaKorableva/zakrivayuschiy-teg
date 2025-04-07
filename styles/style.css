@@ -17,6 +17,7 @@
 
 /* Общие стили */
 /* Общие настройки */
+/* Общие стили */
 body {
   line-height: 1.6;
   color: var(--accent-color);
@@ -30,10 +31,13 @@ body {
   flex-direction: column; /* Вертикальное расположение дочерних элементов */
   align-items: center; /* Центрируем по горизонтали */
   justify-content: center; /* Центрируем по вертикали */
-  background-image: var(--background-pattern);
-  background-size: 4px 4px;
-  background-repeat: repeat;
-  background-attachment: fixed;
+
+  /* Фоновые настройки */
+  background-color: var(--background-color);
+  background-image: var(--pattern-image); /* Используем переменную --pattern-image */
+  background-size: 4px 4px; /* Размер паттерна */
+  background-repeat: repeat; /* Повторение по осям */
+  background-attachment: fixed; /* Фиксированный фон */
 }
 
 /* Шапка */
@@ -162,6 +166,8 @@ body {
   width: 100%;
   height: auto;
   margin-bottom: 20px;
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
 }
 
 .card__description,
