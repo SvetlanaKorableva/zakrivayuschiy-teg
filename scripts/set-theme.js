@@ -34,3 +34,32 @@ function setDisabled(theme) {
 }
 
 initTheme();
+
+function updateStyles() {
+  const root = document.documentElement;
+  root.style.setProperty('--pattern-image', root.classList.contains('theme-dark') 
+      ? 'url(../svg/pattern-dark.svg)' 
+      : 'url(../svg/pattern-light.svg)');
+}
+
+function changeTheme(theme) {
+  // Очищаем все классы тем
+  document.documentElement.className = 'page';
+
+  // Добавляем выбранную тему
+  if (theme === 'auto') {
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.classList.add(`theme-${systemTheme}`);
+  } else {
+      document.documentElement.classList.add(`theme-${theme}`);
+  }
+
+  // Обновляем состояние кнопок
+  setDisabled(theme);
+
+  // Сохраняем тему в localStorage
+  localStorage.setItem('theme', theme);
+
+  // Обновляем стили
+  updateStyles();
+}

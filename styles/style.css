@@ -18,6 +18,7 @@
 /* Общие стили */
 /* Общие настройки */
 /* Общие стили */
+
 body {
   line-height: 1.6;
   color: var(--accent-color);
@@ -63,29 +64,19 @@ body {
 
 /* Заголовок (</HTML>) */
 .header__title {
-  font-family: var(--accent-font); /* Шрифт PressStart2P */
-  font-size: clamp(48px, 10vw, 64px);
+  font-family: 'Press Start 2P', monospace; /* Шрифт PressStart2P */
+  font-size: clamp(48px, 10vw, 65px);
   line-height: 1;
   text-align: center;
   color: var(--accent-color);
 
-  text-shadow:
-      1px 0 0 #333,
-      -1px 0 0 #333,
-      0 1px 0 #333,
-      0 -1px 0 #333,
-      1px 1px 0 #333,
-      -1px -1px 0 #333,
-      1px -1px 0 #333,
-      -1px 1px 0 #333;
-
-  -webkit-text-stroke: 1px #333;
+  
 }
 
 /* Подзаголовок (ЗАКРЫВАЮЩИЙ ТЕГ) */
 .header__subtitle {
-  font-family: var(--accent-font); /* Шрифт PressStart2P */
-  font-size: clamp(18px, 5vw, 24px);
+  font-family: 'Press Start 2P', monospace; /* Шрифт PressStart2P */
+  font-size: clamp(18px, 5vw, 23px);
   font-weight: bold;
   margin-top: 10px;
   color: var(--accent-color);
@@ -113,7 +104,7 @@ body {
 }
 
 .theme-menu__button {
-  font-family: var(--accent-font); /* Шрифт PressStart2P */
+  font-family: 'Press Start 2P', monospace; /* Шрифт PressStart2P */
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -214,12 +205,12 @@ body {
 
 .button__text {
   transition: color 0.3s ease;
-  padding: 10px;
+  padding: 7px;
+  font-family: 'Press Start 2P', monospace;
 }
 
 /* Подвал */
 .footer {
-  padding: 20px;
   background-color: var(--background-color);
 }
 
