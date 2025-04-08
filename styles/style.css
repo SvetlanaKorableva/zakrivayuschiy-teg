@@ -149,7 +149,7 @@ body {
 .card__title {
   font-size: 18px;
   font-weight: var(--heading-font-weight);
-
+  padding-left: 10px;
   text-align: left;
 }
 
@@ -216,12 +216,11 @@ body {
 
 .footer__save-button {
   padding: 10px 20px;
-  border: none;
   background-color: transparent;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   border: 2px solid var(--accent-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
