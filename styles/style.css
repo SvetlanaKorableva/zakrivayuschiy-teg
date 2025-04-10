@@ -14,7 +14,421 @@
 
 */
 
+
+/* Общие стили */
+/* Общие настройки */
+/* Общие стили */
+
+body {
+  line-height: 1.6;
+  color: var(--accent-color);
+  text-align: center;
+}
+
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  display: flex; /* Включаем Flexbox */
+  flex-direction: column; /* Вертикальное расположение дочерних элементов */
+  align-items: center; /* Центрируем по горизонтали */
+  justify-content: center; /* Центрируем по вертикали */
+
+  /* Фоновые настройки */
+  background-color: var(--background-color);
+  background-image: var(--pattern-image); /* Используем переменную --pattern-image */
+  background-size: 4px 4px; /* Размер паттерна */
+  background-repeat: repeat; /* Повторение по осям */
+  background-attachment: fixed; /* Фиксированный фон */
+}
+
+/* Шапка */
+.header {
+  background-color: var(--background-color);
+  padding-top: 100px;
+  padding-bottom: 20px;
+  margin: 0 auto 80px auto; /* Центрируем по горизонтали и добавляем отступ снизу */
+  border: 2px solid var(--accent-color);
+  max-width: clamp(320px, 90%, 646px); /* Резиновая ширина */
+  text-align: center;
+  margin-top: 100px;
+
+  /* Дополнительные стили для центрирования содержимого внутри шапки */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрируем содержимое внутри шапки */
+}
+
+.header__content {
+  margin-bottom: 10px;
+}
+
+/* Заголовок (</HTML>) */
+.header__title {
+  font-family: 'Press Start 2P', monospace; /* Шрифт PressStart2P */
+  font-size: clamp(48px, 10vw, 65px);
+  line-height: 1;
+  text-align: center;
+  color: var(--accent-color);
+
+  
+}
+
+/* Подзаголовок (ЗАКРЫВАЮЩИЙ ТЕГ) */
+.header__subtitle {
+  font-family: 'Press Start 2P', monospace; /* Шрифт PressStart2P */
+  font-size: clamp(18px, 5vw, 23px);
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--accent-color);
+}
+
+/* Переключатель тем */
+.theme-menu {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.theme-menu__item {
+  padding: none;/* Убираем стандартные отступы и маркеры */
+}
+
+.theme-menu__button {
+  font-family: 'Press Start 2P', monospace; /* Шрифт PressStart2P */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.theme-menu__button::after {
+  content: ''; /* Создаём элемент */
+  position: absolute;
+  bottom: -5px; /* Располагаем ниже текста */
+  left: 0.5em;
+  width: calc(100% - 1em); /* Ширина линии */
+  height: 2px; /* Высота линии */
+  background-color: var(--accent-color); /* Цвет линии */
+  transform: scaleX(0); /* Сначала невидимое */
+  transform-origin: left; /* Начинаем анимацию слева */
+  transition: transform 0.3s ease; /* Плавность анимации */
+}
+
+/* Активация подчёркивания при наведении */
+.theme-menu__button:hover::after {
+  transform: scaleX(1); /* Масштабируем до полной ширины */
+}
+
+/* Уменьшение яркости при наведении */
+.theme-menu__button:hover {
+  opacity: 0.6; /* Прозрачность как при hover */
+  color: #666666; 
+}
+
+/* Активная кнопка (стрелочка перед текстом) */
+.theme-menu__button[disabled]::before {
+  content: "▶ "; /* Стрелочка перед активной темой */
+  color: #666666;
+  position: relative; /* Включаем относительное позиционирование */
+  top: -5px;
+  right: -8px;
+}
+
+/* Выделение активной кнопки */
+.theme-menu__button[disabled] {
+  font-weight: bold; /* Жирный шрифт для активной темы */
+  color: #666666; /* Цвет текста остается неизменным */
+  cursor: default; /* Убираем указатель курсора */
+}
+
+/* Основное содержание */
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.card {
+  max-width: clamp(320px, 90%, 646px);
+  margin: 0 auto;
+  background-color: var(--background-color);
+  border: 2px solid var(--accent-color);
+  padding: 0px;
+}
+
+.card__title {
+  font-size: 18px;
+  font-weight: var(--heading-font-weight);
+  padding-left: 10px;
+  text-align: left;
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.card__description,
+.card__text {
+  font-size: 16px;
+  font-weight: var(--text-font-weight);
+  margin-bottom: 20px;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.card__like-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 15px;
+  
+}
+
+/* Стили для искр */
+.sparks {
+  opacity: 0; /* Искры изначально невидимы */
+  transition: opacity 0.3s ease; /* Плавное появление */
+}
+
+
+/* Анимация сердца при наведении */
+.card__icon-button:hover .core {
+  fill: var(--heart-fill-color); /* Закрашиваем сердцевину */
+  transition: fill 0.3s linear; /* Плавность 0.3s */
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--heart-fill-color); /* Закрашиваем основное тело */
+  transition-delay: 0.05s; /* Задержка перед началом анимации */
+  transition: fill 0.3s linear; /* Плавность 0.3s */
+}
+
+/* Возвращение к исходному состоянию */
+.card__icon-button:not(:hover) .core {
+  fill: none; /* Возвращаем сердцевину к прозрачности */
+  transition-delay: 0.03s; /* Задержка перед началом анимации */
+  transition: fill 0.3s linear; /* Плавность 0.3s */
+}
+
+.card__icon-button:not(:hover) .main-body {
+  fill: none; /* Возвращаем основное тело к прозрачности */
+  transition: fill 0.3s linear; /* Плавность 0.3s */
+}
+
+/* Анимация сердца при нажатии (active) */
+.card__icon-button:active .core {
+  fill: red; /* Закрашиваем сердцевину красным */
+  transition: fill 0.3s linear; /* Плавность 0.3s */
+}
+
+.card__icon-button:active .main-body {
+  fill: red; /* Закрашиваем основное тело красным */
+  transition-delay: 0.05s; /* Задержка перед началом анимации */
+  transition: fill 0.3s linear; /* Плавность 0.3s */
+}
+
+/* Контур не меняется при active */
+.card__icon-button:active .contour {
+  fill: var(--contour-color); /* Оставляем контур без изменений */
+}
+/* тут */
+
+/* Заливка сердечка при добавлении класса is-liked */
+.like-icon.is-liked .core {
+    fill: red; /* Закрашиваем сердцевину красным */
+    transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+    fill: red; /* Закрашиваем основное тело красным */
+    transition-delay: 0.06s; /* Задержка перед началом анимации */
+    transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .contour {
+    fill: red; /* Закрашиваем контур красным */
+    transition-delay: 0.1s; /* Задержка перед началом анимации */
+    transition: fill 0.3s linear;
+}
+
+/* Возвращение контура к исходному состоянию */
+.like-icon:not(.is-liked) .contour {
+    fill: var(--contour-color); /* Возвращаем контур к исходному цвету */
+    transition: fill 0.1s linear; /* Быстрое возвращение без задержек */
+}
+
+.like-icon .heart {
+  transform: scale(1); /* Исходный размер */
+  transform-origin: center; /* Центр масштабирования */
+}
+
+/* Масштабирование сердца при добавлении класса is-liked */
+@keyframes heart-scale {
+  0% {
+      transform: scale(1); /* Исходный размер */
+  }
+  50% {
+      transform: scale(1.5); /* Максимальный размер */
+  }
+  100% {
+      transform: scale(1); /* Возврат к исходному размеру */
+  }
+}
+
+.like-icon.is-liked .heart {
+  animation-name: heart-scale; /* Используем ключевые кадры */
+  animation-duration: 0.3s; /* Длительность анимации */
+  animation-timing-function: ease-in-out; /* Плавность */
+  animation-delay: 0.1s; /* Задержка перед началом анимации */
+  animation-fill-mode: forwards; /* Оставляем финальное состояние */
+  animation-iteration-count: 1; /* Однократная анимация */
+  animation-play-state: paused;
+}
+
+/* Анимация искр при добавлении класса is-liked */
+@keyframes sparks-fade {
+  0% {
+      opacity: 0; /* Полная видимость */
+  }
+  100% {
+      opacity: 1; /* Полная прозрачность */
+  }
+}
+
+.like-icon.is-liked .sparks {
+  animation-name: sparks-fade; /* Используем ключевые кадры */
+  animation-duration: 0.3s; /* Длительность анимации */
+  animation-timing-function: ease-in; /* Плавность */
+  animation-delay: 0.3s; /* Задержка перед началом анимации */
+  animation-fill-mode: forwards; /* Оставляем финальное состояние */
+  animation-iteration-count: 1; /* Однократная анимация */
+  animation-direction: alternate; /* От начала к концу и обратно */
+}
+
+.like-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  transition: fill 0.3s ease;
+}
+
+.like-icon.is-liked {
+  fill: red;
+}
+
+.card__like-button {
+  padding: 10px 35px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  border: 2px solid var(--accent-color);
+}
+
+/* Псевдоэлемент для эффекта заливания */
+.card__like-button::before {
+  content: ''; /* Создаем элемент */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ширина равна ширине кнопки */
+  height: 100%; /* Высота равна высоте кнопки */
+  background-color: var(--accent-color); /* Акцентный цвет заливки */
+  transform: scaleX(0); /* Начальная ширина (невидимый) */
+  transform-origin: left; /* Начинаем анимацию слева */
+  transition: transform 1s ease-in-out; /* Плавность заливания */
+  z-index: -1; /* Псевдоэлемент находится под текстом */
+  border-radius: inherit; /* Сохраняем скругление углов */
+}
+
+/* Активация эффекта при наведении */
+.card__like-button:hover::before {
+  transform: scaleX(1); /* Масштабируем до полной ширины */
+}
+
+.card__like-button:hover {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+.button__text {
+  transition: color 0.3s ease;
+  padding: 7px;
+  font-family: 'Press Start 2P', monospace;
+}
+
+/* Подвал */
+.footer {
+  background-color: var(--background-color);
+}
+
+.footer__save-button {
+  padding: 10px 20px;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 2px solid var(--accent-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative; /* Для работы псевдоэлементов */
+  color: var(--accent-color); /* Цвет текста и иконки */
+  overflow: hidden; /* Скрываем выезжающий элемент за пределами кнопки */
+}
+
+.diskette-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.footer__save-button:hover {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  transition: color 1s ease; 
+}
+
+/* Псевдоэлемент для эффекта заливания */
+.footer__save-button::before {
+  content: ''; /* Создаем элемент */
+  position: absolute;
+  width: 100%; /* Ширина равна ширине кнопки */
+  height: 100%; /* Высота равна высоте кнопки */
+  background-color: var(--accent-color); /* Акцентный цвет заливки */
+  transform: scaleX(0); /* Сначала невидимое */
+  transform-origin: left; /* Начинаем анимацию слева */
+  transition: transform 0.5s ease-in-out; /* Плавность заливания */
+  z-index: -1; /* Псевдоэлемент находится под текстом */
+}
+
+/* Активация эффекта при наведении */
+.footer__save-button:hover::before {
+  transform: scaleX(1); /* Масштабируем до полной ширины */
 }

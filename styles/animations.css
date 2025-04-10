@@ -12,3 +12,38 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+/* Анимация для Like */
+.like-icon {
+    transition: fill 0.3s ease;
+}
+
+.like-icon.is-liked {
+    animation: heartbeat 0.8s infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.theme-menu__button[disabled]::before {
+    transform: translateY(-50%) translateX(0);
+    animation: moveArrow 0.5s ease-in-out infinite alternate; /* Запускаем анимацию */
+}
+
+@keyframes moveArrow {
+    from {
+        margin-left: 0px; /* Начальная позиция */
+    }
+    to {
+        margin-left: 4px; /* Конечная позиция (сдвиг вправо на 4px) */
+    }
+}
