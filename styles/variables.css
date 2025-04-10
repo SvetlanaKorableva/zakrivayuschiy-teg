@@ -21,6 +21,9 @@
     --background-color: #000000; /* Темный фон */
     --accent-color: #00ff00; /* Зеленый цвет текста */
     --pattern-image: url('../svg/pattern-dark.svg'); /* Паттерн фона для тёмной темы */
+    --contour-color: #00ff00; /* Цвет контура в тёмной теме */
+    --sparks-color: #000000; /* Цвет искр  */
+    --heart-fill-color: var(--contour-color);
 }
 
 /* Светлая тема */
@@ -28,4 +31,7 @@
     --background-color: #ffffff; /* Светлый фон */
     --accent-color: #000000; /* Чёрный цвет текста */
     --pattern-image: url('../svg/pattern-light.svg'); /* Паттерн фона для светлой темы */
+    --contour-color: black; /* Цвет контура в светлой теме */
+    --sparks-color: red; /* Цвет искр  */
+    --heart-fill-color: var(--contour-color);
 }

@@ -112,6 +112,30 @@ body {
   border: none;
   color: var(--accent-color);
   transition: color 0.3s ease;
+  position: relative;
+}
+
+.theme-menu__button::after {
+  content: ''; /* Создаём элемент */
+  position: absolute;
+  bottom: -5px; /* Располагаем ниже текста */
+  left: 0.5em;
+  width: calc(100% - 1em); /* Ширина линии */
+  height: 2px; /* Высота линии */
+  background-color: var(--accent-color); /* Цвет линии */
+  transform: scaleX(0); /* Сначала невидимое */
+  transform-origin: left; /* Начинаем анимацию слева */
+  transition: transform 0.3s ease; /* Плавность анимации */
+}
+
+/* Активация подчёркивания при наведении */
+.theme-menu__button:hover::after {
+  transform: scaleX(1); /* Масштабируем до полной ширины */
+}
+
+/* Уменьшение яркости при наведении */
+.theme-menu__button:hover {
+  opacity: 0.6; /* Прозрачность как при hover */
 }
 
 /* Hover-эффект для кнопок темы */
@@ -123,6 +147,9 @@ body {
 .theme-menu__button[disabled]::before {
   content: "▶ "; /* Стрелочка перед активной темой */
   color: #666666;
+  position: relative; /* Включаем относительное позиционирование */
+  top: -5px;
+  right: -8px;
 }
 
 /* Выделение активной кнопки */
@@ -173,7 +200,7 @@ body {
 .card__like-section {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 10px;
 }
 
@@ -181,6 +208,129 @@ body {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  margin-bottom: 15px;
+  
+}
+
+/* Стили для искр */
+.sparks {
+  opacity: 0; /* Искры изначально невидимы */
+  transition: opacity 0.3s ease; /* Плавное появление */
+}
+
+
+/* Анимация сердца при наведении */
+.card__icon-button:hover .core {
+  fill: var(--heart-fill-color); /* Закрашиваем сердцевину */
+  transition: fill 0.3s linear; /* Плавность 0.3s */
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--heart-fill-color); /* Закрашиваем основное тело */
+  transition-delay: 0.05s; /* Задержка перед началом анимации */
+  transition: fill 0.3s linear; /* Плавность 0.3s */
+}
+
+/* Возвращение к исходному состоянию */
+.card__icon-button:not(:hover) .core {
+  fill: none; /* Возвращаем сердцевину к прозрачности */
+  transition-delay: 0.03s; /* Задержка перед началом анимации */
+  transition: fill 0.3s linear; /* Плавность 0.3s */
+}
+
+.card__icon-button:not(:hover) .main-body {
+  fill: none; /* Возвращаем основное тело к прозрачности */
+  transition: fill 0.3s linear; /* Плавность 0.3s */
+}
+
+/* Анимация сердца при нажатии (active) */
+.card__icon-button:active .core {
+  fill: red; /* Закрашиваем сердцевину красным */
+  transition: fill 0.3s linear; /* Плавность 0.3s */
+}
+
+.card__icon-button:active .main-body {
+  fill: red; /* Закрашиваем основное тело красным */
+  transition-delay: 0.05s; /* Задержка перед началом анимации */
+  transition: fill 0.3s linear; /* Плавность 0.3s */
+}
+
+/* Контур не меняется при active */
+.card__icon-button:active .contour {
+  fill: var(--contour-color); /* Оставляем контур без изменений */
+}
+/* тут */
+
+/* Заливка сердечка при добавлении класса is-liked */
+.like-icon.is-liked .core {
+    fill: red; /* Закрашиваем сердцевину красным */
+    transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+    fill: red; /* Закрашиваем основное тело красным */
+    transition-delay: 0.06s; /* Задержка перед началом анимации */
+    transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .contour {
+    fill: red; /* Закрашиваем контур красным */
+    transition-delay: 0.1s; /* Задержка перед началом анимации */
+    transition: fill 0.3s linear;
+}
+
+/* Возвращение контура к исходному состоянию */
+.like-icon:not(.is-liked) .contour {
+    fill: var(--contour-color); /* Возвращаем контур к исходному цвету */
+    transition: fill 0.1s linear; /* Быстрое возвращение без задержек */
+}
+
+.like-icon .heart {
+  transform: scale(1); /* Исходный размер */
+  transform-origin: center; /* Центр масштабирования */
+}
+
+/* Масштабирование сердца при добавлении класса is-liked */
+@keyframes heart-scale {
+  0% {
+      transform: scale(1); /* Исходный размер */
+  }
+  50% {
+      transform: scale(1.5); /* Максимальный размер */
+  }
+  100% {
+      transform: scale(1); /* Возврат к исходному размеру */
+  }
+}
+
+.like-icon.is-liked .heart {
+  animation-name: heart-scale; /* Используем ключевые кадры */
+  animation-duration: 0.3s; /* Длительность анимации */
+  animation-timing-function: ease-in-out; /* Плавность */
+  animation-delay: 0.1s; /* Задержка перед началом анимации */
+  animation-fill-mode: forwards; /* Оставляем финальное состояние */
+  animation-iteration-count: 1; /* Однократная анимация */
+  animation-play-state: paused;
+}
+
+/* Анимация искр при добавлении класса is-liked */
+@keyframes sparks-fade {
+  0% {
+      opacity: 0; /* Полная видимость */
+  }
+  100% {
+      opacity: 1; /* Полная прозрачность */
+  }
+}
+
+.like-icon.is-liked .sparks {
+  animation-name: sparks-fade; /* Используем ключевые кадры */
+  animation-duration: 0.3s; /* Длительность анимации */
+  animation-timing-function: ease-in; /* Плавность */
+  animation-delay: 0.3s; /* Задержка перед началом анимации */
+  animation-fill-mode: forwards; /* Оставляем финальное состояние */
+  animation-iteration-count: 1; /* Однократная анимация */
+  animation-direction: alternate; /* От начала к концу и обратно */
 }
 
 .like-icon {
@@ -195,12 +345,41 @@ body {
 }
 
 .card__like-button {
-  padding: 10px 20px;
+  padding: 10px 35px;
+  margin-bottom: 20px;
+  margin-right: 20px;
   border: none;
   background-color: transparent;
   cursor: pointer;
   font-size: 16px;
   transition: color 0.3s ease;
+  border: 2px solid var(--accent-color);
+}
+
+/* Псевдоэлемент для эффекта заливания */
+.card__like-button::before {
+  content: ''; /* Создаем элемент */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ширина равна ширине кнопки */
+  height: 100%; /* Высота равна высоте кнопки */
+  background-color: var(--accent-color); /* Акцентный цвет заливки */
+  transform: scaleX(0); /* Начальная ширина (невидимый) */
+  transform-origin: left; /* Начинаем анимацию слева */
+  transition: transform 1s ease-in-out; /* Плавность заливания */
+  z-index: -1; /* Псевдоэлемент находится под текстом */
+  border-radius: inherit; /* Сохраняем скругление углов */
+}
+
+/* Активация эффекта при наведении */
+.card__like-button:hover::before {
+  transform: scaleX(1); /* Масштабируем до полной ширины */
+}
+
+.card__like-button:hover {
+  background-color: var(--accent-color);
+  color: var(--background-color);
 }
 
 .button__text {
@@ -234,4 +413,39 @@ body {
 .footer__save-button:hover {
   background-color: var(--accent-color);
   color: var(--background-color);
+}
+
+/* Кнопка "Сохранить на память" */
+.footer__save-button {
+  position: relative; /* Для работы псевдоэлементов */
+  background: transparent; /* Прозрачный фон по умолчанию */
+  border: 2px solid var(--accent-color); /* Граница кнопки */
+  color: var(--accent-color); /* Цвет текста и иконки */
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  cursor: pointer;
+  overflow: hidden; /* Скрываем выезжающий элемент за пределами кнопки */
+}
+
+/* Псевдоэлемент для эффекта заливания */
+.footer__save-button::before {
+  content: ''; /* Создаем элемент */
+  position: absolute;
+  width: 100%; /* Ширина равна ширине кнопки */
+  height: 100%; /* Высота равна высоте кнопки */
+  background-color: var(--accent-color); /* Акцентный цвет заливки */
+  transform: scaleX(0); /* Сначала невидимое */
+  transform-origin: left; /* Начинаем анимацию слева */
+  transition: transform 0.5s ease-in-out; /* Плавность заливания */
+  z-index: -1; /* Псевдоэлемент находится под текстом */
+}
+
+/* Активация эффекта при наведении */
+.footer__save-button:hover::before {
+  transform: scaleX(1); /* Масштабируем до полной ширины */
+}
+
+/* Изменение цвета текста при наведении */
+.footer__save-button:hover {
+  color: var(--background-color); /* Цвет фона */
+  transition: color 1s ease; /* Плавность изменения цвета текста */
 }
