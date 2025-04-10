@@ -136,11 +136,7 @@ body {
 /* Уменьшение яркости при наведении */
 .theme-menu__button:hover {
   opacity: 0.6; /* Прозрачность как при hover */
-}
-
-/* Hover-эффект для кнопок темы */
-.theme-menu__button:hover {
-  color: #666666; /* Цвет текста при наведении */
+  color: #666666; 
 }
 
 /* Активная кнопка (стрелочка перед текстом) */
@@ -402,6 +398,9 @@ body {
   gap: 5px;
   border: 2px solid var(--accent-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative; /* Для работы псевдоэлементов */
+  color: var(--accent-color); /* Цвет текста и иконки */
+  overflow: hidden; /* Скрываем выезжающий элемент за пределами кнопки */
 }
 
 .diskette-icon {
@@ -413,17 +412,7 @@ body {
 .footer__save-button:hover {
   background-color: var(--accent-color);
   color: var(--background-color);
-}
-
-/* Кнопка "Сохранить на память" */
-.footer__save-button {
-  position: relative; /* Для работы псевдоэлементов */
-  background: transparent; /* Прозрачный фон по умолчанию */
-  border: 2px solid var(--accent-color); /* Граница кнопки */
-  color: var(--accent-color); /* Цвет текста и иконки */
-  padding: 10px 20px; /* Отступы внутри кнопки */
-  cursor: pointer;
-  overflow: hidden; /* Скрываем выезжающий элемент за пределами кнопки */
+  transition: color 1s ease; 
 }
 
 /* Псевдоэлемент для эффекта заливания */
@@ -442,10 +431,4 @@ body {
 /* Активация эффекта при наведении */
 .footer__save-button:hover::before {
   transform: scaleX(1); /* Масштабируем до полной ширины */
-}
-
-/* Изменение цвета текста при наведении */
-.footer__save-button:hover {
-  color: var(--background-color); /* Цвет фона */
-  transition: color 1s ease; /* Плавность изменения цвета текста */
 }
