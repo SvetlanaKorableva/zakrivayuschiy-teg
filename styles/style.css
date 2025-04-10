@@ -92,7 +92,7 @@ body {
 
 .theme-menu__list {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   gap: 10px;
   list-style: none;
   padding: 0;
@@ -136,7 +136,7 @@ body {
 /* Уменьшение яркости при наведении */
 .theme-menu__button:hover {
   opacity: 0.6; /* Прозрачность как при hover */
-  color: #666666;
+  color: #666666; 
 }
 
 /* Активная кнопка (стрелочка перед текстом) */
@@ -412,7 +412,7 @@ body {
 .footer__save-button:hover {
   background-color: var(--accent-color);
   color: var(--background-color);
-  transition: color 1s ease;
+  transition: color 1s ease; 
 }
 
 /* Псевдоэлемент для эффекта заливания */
