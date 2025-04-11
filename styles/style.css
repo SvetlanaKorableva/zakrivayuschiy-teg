@@ -136,7 +136,7 @@ body {
 /* Уменьшение яркости при наведении */
 .theme-menu__button:hover {
   opacity: 0.6; /* Прозрачность как при hover */
-  color: #666666; 
+  color: #666666;
 }
 
 /* Активная кнопка (стрелочка перед текстом) */
@@ -344,7 +344,6 @@ body {
   padding: 10px 35px;
   margin-bottom: 20px;
   margin-right: 20px;
-  border: none;
   background-color: transparent;
   cursor: pointer;
   font-size: 16px;
@@ -412,7 +411,7 @@ body {
 .footer__save-button:hover {
   background-color: var(--accent-color);
   color: var(--background-color);
-  transition: color 1s ease; 
+  transition: color 1s ease;
 }
 
 /* Псевдоэлемент для эффекта заливания */
