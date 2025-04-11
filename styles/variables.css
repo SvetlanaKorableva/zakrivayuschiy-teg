@@ -13,14 +13,12 @@
     --heading-font-weight: 785; /* Толщина заголовков */
     --background-color: #ffffff; /* Фон по умолчанию (светлая тема) */
     --accent-color: #000000; /* Цвет текста по умолчанию (светлая тема) */
-    --pattern-image: url('../svg/pattern-light.svg'); /* Паттерн фона по умолчанию (светлая тема) */
 }
 
 /* Темная тема */
 :root.theme-dark {
     --background-color: #000000; /* Темный фон */
     --accent-color: #00ff00; /* Зеленый цвет текста */
-    --pattern-image: url('../svg/pattern-dark.svg'); /* Паттерн фона для тёмной темы */
     --contour-color: #00ff00; /* Цвет контура в тёмной теме */
     --sparks-color: #000000; /* Цвет искр  */
     --heart-fill-color: var(--contour-color);
@@ -30,8 +28,60 @@
 :root.theme-light {
     --background-color: #ffffff; /* Светлый фон */
     --accent-color: #000000; /* Чёрный цвет текста */
-    --pattern-image: url('../svg/pattern-light.svg'); /* Паттерн фона для светлой темы */
     --contour-color: black; /* Цвет контура в светлой теме */
     --sparks-color: red; /* Цвет искр  */
     --heart-fill-color: var(--contour-color);
+    
+}
+
+/* Светлая тема */
+:root.theme-light {
+    --gradient-stripes-horizontal: repeating-linear-gradient(
+        90deg,
+        #d3d3d3,
+        #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    --gradient-stripes-vertical: repeating-linear-gradient(
+        0deg,
+        #d3d3d3,
+        #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    --gradient-transition: linear-gradient(
+        to bottom,
+        #e7e7e7 1%,
+        #1a1a1a 100%
+    );
+    --background-gradient: var(--gradient-stripes-horizontal), 
+                          var(--gradient-stripes-vertical), 
+                          var(--gradient-transition);
+}
+
+/* Тёмная тема */
+:root.theme-dark {
+    --gradient-stripes-horizontal: repeating-linear-gradient(
+        90deg,
+        #000,
+        #000 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    --gradient-stripes-vertical: repeating-linear-gradient(
+        0deg,
+        #000,
+        #000 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    --gradient-transition: linear-gradient(
+        to bottom,
+        #007f0c 1%,
+        #004306 100%
+    );
+    --background-gradient: var(--gradient-stripes-horizontal), 
+                          var(--gradient-stripes-vertical), 
+                          var(--gradient-transition);
 }
