@@ -47,6 +47,10 @@
     background-size: 4px 4px; /* Размер паттерна */
     background-attachment: fixed; /* Фиксированный фон */
     background-repeat: repeat; /* Повторение по осям */
+}
+
+/* Шрифты */
+.page {
     font-family: var(--main-font);
     font-variation-settings: 'wght' var(--text-font-weight);
 }
