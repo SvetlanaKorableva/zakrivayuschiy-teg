@@ -18,6 +18,6 @@
 @font-face {
     font-family: 'Inter';
     src: url('/fonts/Inter-Variable.woff2') format('woff2-variations'); /* Исправлен формат */
-    font-weight: 400 700; /* Диапазон весов, используемых в макете */
+    font-weight: 400 785; /* Диапазон весов, используемых в макете */
     font-style: normal;
 }
