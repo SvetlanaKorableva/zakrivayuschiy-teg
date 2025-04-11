@@ -92,7 +92,7 @@ body {
 
 .theme-menu__list {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   gap: 10px;
   list-style: none;
   padding: 0;
