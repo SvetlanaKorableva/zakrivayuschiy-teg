@@ -11,7 +11,7 @@
     --accent-color: #000000;
     --pattern-image: url('../svg/pattern-light.svg'); /* Правильный путь к SVG */
     --text-font-weight: 400;
-    --heading-font-weight: 700;
+    --heading-font-weight: 785;
 }
 
 /* Темная тема */
@@ -20,7 +20,7 @@
     --accent-color: #00ff00;
     --pattern-image: url('../svg/pattern-dark.svg'); /* Правильный путь к SVG */
     --text-font-weight: 500;
-    --heading-font-weight: 800;
+    --heading-font-weight: 785;
 }
 
 /* Автоматическая тема (системные настройки) */
@@ -47,10 +47,6 @@
     background-size: 4px 4px; /* Размер паттерна */
     background-attachment: fixed; /* Фиксированный фон */
     background-repeat: repeat; /* Повторение по осям */
-}
-
-/* Шрифты */
-.page {
     font-family: var(--main-font);
     font-variation-settings: 'wght' var(--text-font-weight);
 }
