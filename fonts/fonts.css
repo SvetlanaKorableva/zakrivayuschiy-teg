@@ -2,6 +2,7 @@
 /* Подключение шрифта Inter */
 /* Подключение вариативного шрифта Inter */
 /* Подключение вариативного шрифта Inter */
+/* Подключение вариативного шрифта Inter */
 @font-face {
     font-family: 'Inter';
     src: url('/fonts/Inter-Variable.woff2') format('woff2-variations'); /* Правильный формат */
@@ -21,14 +22,14 @@
 @font-face {
     font-family: 'Inter';
     src: url('/fonts/Inter-Variable.woff2') format('woff2-variations');
-    font-weight: 785;
-    font-style: bold;
+    font-weight: 400 900;
+    font-style: italic;
 }
 
 /* Подключение шрифта PressStart2P */
 @font-face {
     font-family: 'PressStart2P';
     src: url('/fonts/PressStart2P-Regular.woff') format('woff');
-    font-weight: 400 900;
+    font-weight: normal;
     font-style: normal;
 }
