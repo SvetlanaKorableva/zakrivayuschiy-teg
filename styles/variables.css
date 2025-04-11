@@ -10,7 +10,7 @@
     --main-font: 'Inter', sans-serif; /* Основной шрифт */
     --accent-font: 'PressStart2P', monospace; /* Акцентный шрифт */
     --text-font-weight: 400; /* Толщина основного текста */
-    --heading-font-weight: 700; /* Толщина заголовков */
+    --heading-font-weight: 785; /* Толщина заголовков */
     --background-color: #ffffff; /* Фон по умолчанию (светлая тема) */
     --accent-color: #000000; /* Цвет текста по умолчанию (светлая тема) */
     --pattern-image: url('../svg/pattern-light.svg'); /* Паттерн фона по умолчанию (светлая тема) */
