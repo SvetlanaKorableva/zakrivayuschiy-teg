@@ -1,25 +1,38 @@
 /* В этом файле вы импортируете все шрифты для сайта. Один из них вариативный и требует особенной настройки */
 
 @font-face {
-  font-family: 'Inter';
-  src:
-    local('Inter'),
-    url('/fonts/Inter-Variable.woff2')
-    format('woff2 supports variations'),
-    url('/fonts/Inter-Variable.woff2') format('woff2-variations');
-  font-display: swap;
-  font-weight: 785;
+    font-family: 'Inter';
+    src:
+        local('Inter'),
+        url('/fonts/Inter-Variable.woff2') format('woff2 supports variations'),
+        url('/fonts/Inter-Variable.woff2') format('woff2-variations');
+    font-display: swap;
+    font-weight: 400 900; /* Общий диапазон */
+    font-style: normal;
 }
 
+/* Конкретное начертание 400 */
 @font-face {
-  font-family: 'Inter';
-  src:
-    local('Inter'),
-    url('/fonts/Inter-Variable.woff2')
-    format('woff2 supports variations'),
-    url('/fonts/Inter-Variable.woff2') format('woff2-variations');
-  font-display: swap;
-  font-weight: 400;
+    font-family: 'Inter';
+    src:
+        local('Inter'),
+        url('/fonts/Inter-Variable.woff2') format('woff2 supports variations'),
+        url('/fonts/Inter-Variable.woff2') format('woff2-variations');
+    font-display: swap;
+    font-weight: 400; /* Конкретное начертание */
+    font-style: normal;
+}
+
+/* Конкретное начертание 785 (если нужно) */
+@font-face {
+    font-family: 'Inter';
+    src:
+        local('Inter'),
+        url('/fonts/Inter-Variable.woff2') format('woff2 supports variations'),
+        url('/fonts/Inter-Variable.woff2') format('woff2-variations');
+    font-display: swap;
+    font-weight: 785; /* Конкретное начертание */
+    font-style: normal;
 }
 
 /* Подключение шрифта PressStart2P */
