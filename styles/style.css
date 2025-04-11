@@ -413,6 +413,7 @@ body {
 .footer__save-button:hover {
   background-color: var(--accent-color);
   color: var(--background-color);
+  transition: color 1s ease;
 }
 
 /* Кнопка "Сохранить на память" */
@@ -442,10 +443,4 @@ body {
 /* Активация эффекта при наведении */
 .footer__save-button:hover::before {
   transform: scaleX(1); /* Масштабируем до полной ширины */
-}
-
-/* Изменение цвета текста при наведении */
-.footer__save-button:hover {
-  color: var(--background-color); /* Цвет фона */
-  transition: color 1s ease; /* Плавность изменения цвета текста */
 }
