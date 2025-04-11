@@ -1,10 +1,19 @@
 /* В этом файле вы импортируете все шрифты для сайта. Один из них вариативный и требует особенной настройки */
 /* Подключение шрифта Inter */
 /* Подключение вариативного шрифта Inter */
+/* Подключение вариативного шрифта Inter */
 @font-face {
     font-family: 'Inter';
-    src: url('/fonts/Inter-Variable.woff2') format('woff2-variations'); /* Используем правильный формат */
-    font-weight: 400 900; /* Корректный диапазон весов  */
+    src: url('/fonts/Inter-Variable.woff2') format('woff2-variations'); /* Правильный формат */
+    font-weight: 400 900; /* Корректный диапазон весов */
+    font-style: normal;
+}
+
+/* Явное определение конкретного начертания 785 */
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Variable.woff2') format('woff2-variations');
+    font-weight: 785; /* Конкретное начертание */
     font-style: normal;
 }
 
@@ -12,7 +21,7 @@
 @font-face {
     font-family: 'Inter';
     src: url('/fonts/Inter-Variable.woff2') format('woff2-variations');
-    font-weight: 400 900;
+    font-weight: 785;
     font-style: bold;
 }
 
@@ -20,6 +29,6 @@
 @font-face {
     font-family: 'PressStart2P';
     src: url('/fonts/PressStart2P-Regular.woff') format('woff');
-    font-weight: normal;
+    font-weight: 400 900;
     font-style: normal;
 }
