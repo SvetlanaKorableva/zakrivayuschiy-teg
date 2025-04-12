@@ -183,6 +183,42 @@ body {
   border-bottom: 2px solid var(--accent-color);
 }
 
+.card__image_start {
+  position: relative; /* Для абсолютного позиционирования лейбла */
+    display: inline-block;
+}
+
+.card__label {
+  position: absolute;
+  top: 47px;
+  right: 25px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 16px;
+  mix-blend-mode: hard-light;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--label-background);
+}
+
+/* Обводка через text-stroke (если поддерживается) */
+@supports (-webkit-text-stroke: 1px black) {
+  .card__label {
+      -webkit-text-stroke: 1px var(--text-stroke-color);
+      color: var(--label-background);
+  }
+}
+
+/* Фоллбэк через text-shadow */
+.card__label {
+  text-shadow: 
+      -1px -1px 0 var(--text-stroke-color),
+      1px -1px 0 var(--text-stroke-color),
+      -1px 1px 0 var(--text-stroke-color),
+      1px 1px 0 var(--text-stroke-color);
+}
+
+
 .card__description,
 .card__text {
   font-size: 16px;

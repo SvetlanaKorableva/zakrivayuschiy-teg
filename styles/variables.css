@@ -22,6 +22,8 @@
     --contour-color: #00ff00; /* Цвет контура в тёмной теме */
     --sparks-color: #000000; /* Цвет искр  */
     --heart-fill-color: var(--contour-color);
+    --label-background: rgba(0, 255, 0, 0.6); /* Зелёный полупрозрачный фон */
+    --text-stroke-color: rgba(0, 0, 0, 0.2); /* Чёрная обводка текста */
 }
 
 /* Светлая тема */
@@ -31,6 +33,8 @@
     --contour-color: black; /* Цвет контура в светлой теме */
     --sparks-color: red; /* Цвет искр  */
     --heart-fill-color: var(--contour-color);
+    --label-background: rgba(0, 0, 0, 0.6); /* Чёрный полупрозрачный фон */
+    --text-stroke-color: rgba(255, 255, 255, 0.3); /* Белая обводка текста */
     
 }
 
