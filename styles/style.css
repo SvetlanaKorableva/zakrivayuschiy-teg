@@ -15,10 +15,6 @@
 */
 
 
-/* Общие стили */
-/* Общие настройки */
-/* Общие стили */
-
 body {
   line-height: 1.6;
   color: var(--accent-color);
@@ -178,6 +174,70 @@ body {
 .card__image {
   width: 100%;
   height: auto;
+  margin-bottom: 20px;
+  filter: hue-rotate(-70deg);
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.card__image_fear {
+  width: 100%;
+  height: auto;
+  filter: blur(0.07rem) hue-rotate(-60deg);
+  margin-bottom: 20px;
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.card__image_excitement {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  filter: invert(1.5);
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.card__image_acceptance {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  filter: sepia(80%);
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.card__image_difficult {
+  width: 100%;
+  filter: contrast(70%);
+  height: auto;
+  margin-bottom: 20px;
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.card__image_search {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  filter: saturate(128%);
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.card__image_multitasking {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  filter: grayscale(0.9);
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.card__image_hard {
+  width: 100%;
+  height: auto;
+  filter: opacity(0.9);
   margin-bottom: 20px;
   border-top: 2px solid var(--accent-color);
   border-bottom: 2px solid var(--accent-color);
