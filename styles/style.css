@@ -165,6 +165,7 @@ body {
   background-color: var(--background-color);
   border: 2px solid var(--accent-color);
   padding: 0px;
+  margin-bottom: 40px;
 }
 
 .card__title {
