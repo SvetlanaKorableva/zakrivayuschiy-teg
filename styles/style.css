@@ -444,30 +444,36 @@ body {
   font-size: 16px;
   transition: color 0.3s ease;
   border: 2px solid var(--accent-color);
+  color: var(--text-color); /* Переменная для цвета текста */
+  font-family: 'Press Start 2P', monospace;
+  transition: color 0.3s ease;
+   
 }
 
-/* Псевдоэлемент для эффекта заливания */
+/* Псевдоэлемент для анимации */
 .card__like-button::before {
-  content: ''; /* Создаем элемент */
+  content: ''; /* Создаём элемент */
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Ширина равна ширине кнопки */
-  height: 100%; /* Высота равна высоте кнопки */
-  background-color: var(--accent-color); /* Акцентный цвет заливки */
-  transform: scaleX(0); /* Начальная ширина (невидимый) */
-  transform-origin: left; /* Начинаем анимацию слева */
-  transition: transform 1s ease-in-out; /* Плавность заливания */
+  width: 0%; /* Начальная ширина */
+  height: 100%;
+  background-color: var(--blend-color); /* Цвет для смешивания */
   z-index: -1; /* Псевдоэлемент находится под текстом */
-  border-radius: inherit; /* Сохраняем скругление углов */
+  transition: width 0.9s ease; /* Плавность изменения ширины */
 }
 
-/* Активация эффекта при наведении */
+/* При наведении */
 .card__like-button:hover::before {
-  transform: scaleX(1); /* Масштабируем до полной ширины */
+  width: 100%; /* Расширяем псевдоэлемент на всю ширину */
 }
 
 .card__like-button:hover {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+.card__like-button:active {
   background-color: var(--accent-color);
   color: var(--background-color);
 }

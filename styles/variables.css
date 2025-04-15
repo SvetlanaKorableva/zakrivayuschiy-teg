@@ -24,6 +24,31 @@
     --heart-fill-color: var(--contour-color);
     --label-background: rgba(0, 255, 0, 0.7); /* Зелёный полупрозрачный фон */
     --text-stroke-color: rgba(0, 0, 0, 0.2); /* Чёрная обводка текста */
+    --text-color: var(--accent-color); /* Акцентный текст */
+    --blend-color: #00ff00; 
+
+    --gradient-stripes-horizontal: repeating-linear-gradient(
+        90deg,
+        #000,
+        #000 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    --gradient-stripes-vertical: repeating-linear-gradient(
+        0deg,
+        #000,
+        #000 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    --gradient-transition: linear-gradient(
+        to bottom,
+        #007f0c 1%,
+        #004306 100%
+    );
+    --background-gradient: var(--gradient-stripes-horizontal), 
+                          var(--gradient-stripes-vertical), 
+                          var(--gradient-transition);
 }
 
 /* Светлая тема */
@@ -35,11 +60,9 @@
     --heart-fill-color: var(--contour-color);
     --label-background: rgba(0, 0, 0, 0.8); /* Чёрный полупрозрачный фон */
     --text-stroke-color: rgba(255, 255, 255, 0.3); /* Белая обводка текста */
-    
-}
+    --text-color: #000000; /* Белый текст */
+    --blend-color: #000000;
 
-/* Светлая тема */
-:root.theme-light {
     --gradient-stripes-horizontal: repeating-linear-gradient(
         90deg,
         #d3d3d3,
@@ -64,28 +87,3 @@
                           var(--gradient-transition);
 }
 
-/* Тёмная тема */
-:root.theme-dark {
-    --gradient-stripes-horizontal: repeating-linear-gradient(
-        90deg,
-        #000,
-        #000 2px,
-        transparent 2px,
-        transparent 4px
-    );
-    --gradient-stripes-vertical: repeating-linear-gradient(
-        0deg,
-        #000,
-        #000 2px,
-        transparent 2px,
-        transparent 4px
-    );
-    --gradient-transition: linear-gradient(
-        to bottom,
-        #007f0c 1%,
-        #004306 100%
-    );
-    --background-gradient: var(--gradient-stripes-horizontal), 
-                          var(--gradient-stripes-vertical), 
-                          var(--gradient-transition);
-}
