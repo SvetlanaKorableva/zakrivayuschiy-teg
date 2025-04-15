@@ -26,7 +26,6 @@
     --text-stroke-color: rgba(0, 0, 0, 0.2); /* Чёрная обводка текста */
     --text-color: var(--accent-color); /* Акцентный текст */
     --blend-color: #00ff00; 
-
     --gradient-stripes-horizontal: repeating-linear-gradient(
         90deg,
         #000,
