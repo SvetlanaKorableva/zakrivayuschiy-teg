@@ -425,8 +425,8 @@ body {
 }
 
 .like-icon {
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 33px;
   fill: currentColor;
   transition: fill 0.3s ease;
 }
@@ -525,4 +525,76 @@ body {
 /* Активация эффекта при наведении */
 .footer__save-button:hover::before {
   transform: scaleX(1); /* Масштабируем до полной ширины */
+}
+
+/* Скрываем модальное окно по умолчанию */
+.modal {
+  display: none;
+}
+
+/* Показываем модальное окно, когда checkbox активен */
+.modal-trigger:checked ~ .modal {
+  display: flex; /* Отображаем окно */
+  flex-direction: column; /* Вертикальное расположение элементов */
+  align-items: center; /* Центрируем содержимое */
+  gap: 10px; /* Отступ между элементами */
+  border: 2px solid var(--accent-color); /* Динамическая обводка */
+  background-color: var(--background-color); /* Фоновое цветовое значение */
+  padding: 30px; /* Внутренние отступы */
+  max-width: 353px; /* Максимальная ширина */
+  text-align: center; /* Выравнивание текста */
+  position: fixed; /* Фиксированное положение */
+  top: 50%; /* Центрируем по вертикали */
+  left: 50%; /* Центрируем по горизонтали */
+  transform: translate(-50%, -50%); /* Корректируем центрирование */
+  z-index: 1000; /* Окно поверх остальных элементов */
+  color: var(--accent-color);
+  outline: none;
+  margin: 0;
+}
+
+.modal__text {
+  margin-bottom: 30px; /* Убираем стандартные отступы */
+  color: var(--accent-color); /* Акцентный цвет текста */
+  font-family: 'Press Start 2P', monospace; /* Шрифт */
+  font-size: 14px; /* Размер шрифта */
+}
+
+.diskette-icon-modal {
+  width: 59px; /* Размер иконки */
+  height: 59px; /* Размер иконки */
+  fill: var(--accent-color); /* Цвет иконки зависит от темы */
+  position: relative; /* Выравниваем иконку по верхнему краю текста */
+  top: -15px;
+}
+
+/* Стиль для заднего слоя (backdrop) */
+.modal[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный чёрный фон */
+}
+
+/* Контент модального окна */
+.modal__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Кнопка закрытия модального окна */
+.modal__button {
+  padding: 10px 130px; /* Внутренние отступы */
+  border: 2px solid var(--accent-color); /* Граница 1px */
+  background-color: transparent; /* Прозрачный фон */
+  color: var(--accent-color); /* Цвет текста */
+  font-family: 'Press Start 2P', monospace; /* Шрифт */
+  font-size: 14px; /* Размер шрифта */
+  cursor: pointer; /* Изменение курсора при наведении */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Плавность анимации */
+}
+
+/* Эффект при наведении на кнопку закрытия */
+.modal__button:hover {
+  background-color: var(--accent-color); /* Заливка фона */
+  color: var(--background-color); /* Цвет текста меняется на фоновый */
 }

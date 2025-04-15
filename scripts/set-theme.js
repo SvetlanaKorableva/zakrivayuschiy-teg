@@ -63,3 +63,4 @@ function changeTheme(theme) {
   // Обновляем стили
   updateStyles();
 }
+

@@ -349,16 +349,31 @@
         </main>
     </div>
 
-    <!-- Подвал -->
     <footer class="footer">
-        <button class="footer__save-button">
-        
-        <svg class="footer__icon" width="21" height="21">
-            <use xlink:href="README.md#icon-floppy"></use>
-        </svg>
-        
+        <!-- Скрытый checkbox -->
+        <input type="checkbox" id="modalTrigger" class="modal-trigger" hidden>
+    
+        <!-- Кнопка "Сохранить на память", которая работает как label для checkbox -->
+        <label for="modalTrigger" class="footer__save-button">
+            <svg class="footer__icon diskette-icon" width="24" height="24">
+                <use xlink:href="svg/symbols.svg#icon-floppy"></use>
+            </svg>
             <span class="button__text">Сохранить на память</span>
-        </button>
+        </label>
+    
+        <!-- Модальное окно -->
+        <dialog id="saveDialog" class="modal">
+            <div class="modal__content">
+                <div class="modal__row">
+                    <svg class="modal__icon diskette-icon-modal" width="59" height="59" fill="currentColor">
+                        <use xlink:href="svg/symbols.svg#icon-floppy"></use>
+                    </svg>
+                    <p class="modal__text">ВСТАВЬТЕ ДИСКЕТУ, ЧТОБЫ ПРОДОЛЖИТЬ</p>
+                </div>
+                <!-- Кнопка закрытия окна -->
+                <label for="modalTrigger" class="modal__button">ОК</label>
+            </div>
+        </dialog>
     </footer>
 </body>
 </html>
